@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { useStarshipService } from '@/resources/starship/starship.service'
 import { Starship } from '@/resources/starship/starship.resource';
 
-export default function GaleriaPage() {
+export default function StarshipPage() {
   const useService = useStarshipService();
   const [starships, setStarships] = useState<Starship[]>([]);
 
@@ -34,19 +34,16 @@ export default function GaleriaPage() {
 
   return (
     <>
-    <div className="container mx-auto mt-8 px-4">
+    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <Header />
-      <section className="flex flex-col items-center justify-center my-20">
-        <div className="flex space-x-4">
-          <h1 className='bg-white text-black'>Starships</h1>
-          {/* <button className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-blue-300">Add new</button> */}
-        </div>
+      <section className="flex flex-col items-center justify-center flex-grow">
+          <h1 className="text-center text-2xl font-bold my-20">Starships</h1>
       </section>
       <section className="grid grid-cols-4 gap-8">
         { renderStarshipCards() }
       </section>
     </div>
-    <Footer />
+      <Footer />
     </>
   );
 }

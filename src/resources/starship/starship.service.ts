@@ -1,7 +1,7 @@
 import { Starship } from './starship.resource'
 
 class StarshipService {
-    baseUrl: string = 'http://localhost:8080/starships';
+    baseUrl: string = process.env.NEXT_PUBLIC_API_URL + '/starships';
 
     async search(): Promise<Starship[]> {
         const response = await fetch(this.baseUrl);
