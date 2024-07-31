@@ -31,6 +31,7 @@ Clone o repositório para a sua máquina local:
 ```sh
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
+npm install
 ```
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
