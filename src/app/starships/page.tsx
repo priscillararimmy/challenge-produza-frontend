@@ -12,8 +12,6 @@ export default function StarshipPage() {
     async function fetchStarships() {
       const result = await useService.search();
       setStarships(result);
-      console.log(result);
-      console.table(result);
     }
     fetchStarships();
   }, []); 
