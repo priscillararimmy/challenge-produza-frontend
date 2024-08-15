@@ -1,8 +1,9 @@
 'use client'
-import { Header, Footer, ImageCard } from '@/components'
+import { Header, Footer, ImageCard, Button } from '@/components'
 import { useState, useEffect } from 'react'
 import { Pilot } from '@/resources/pilot/pilot.resource';
 import { usePilotService } from '@/resources/pilot/pilot.service';
+import Link from 'next/link';
 
 export default function PilotePage() {
   const useService = usePilotService();
@@ -39,12 +40,14 @@ export default function PilotePage() {
       <section className="flex flex-col items-center justify-center flex-grow">
           <h1 className="text-center text-2xl font-bold my-20">Pilots</h1>
       </section>
-      {/* <section className="flex flex-col items-center justify-center my-20">
+      <section className="flex flex-col items-center justify-center my-20">
         <div>
-          <h1 className='bg-white text-black'>Pilots</h1>
-          <button className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-blue-300">Add new</button> 
+          <Button style='bg-blue-500 hover:bg-blue-300' label='Search'/>
+          <Link href="/formulario">
+          <Button style='bg-orange-500 hover:bg-orange-300' label='Add new'/>
+          </Link>
         </div>
-      </section> */}
+      </section>
       <section className="grid grid-cols-4 gap-8">
         { renderPilotCards() }
       </section>
